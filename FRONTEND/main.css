@@ -1,0 +1,2327 @@
+@charset "UTF-8";
+/*ROBOTO >>> font-family:'Roboto', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2? family = Roboto: ital, wght @ 0,100; 0,300; 0,400; 0,500; 0,700; 0,900; 1,100; 1,300; 1,400; 1,500; 1,700; 1,900 & display = swap");
+/*Montserrat >>> font-family: 'Montserrat', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2? familia = Montserrat: ital, wght @ 0,100; 0,200; 0,300; 0,400; 0,500; 0,600; 0,700; 0,800; 0,900; 1,100; 1,200; 1,300; 1,400; 1,500; 1,600; 1,700; 1,800; 1,900 & display = swap");
+/*font-family: "Calistoga", arial, sans-serif;*/
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+/*Reseteo de css*/
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  /* Quitar viñetas de las listas*/
+  text-decoration: none;
+  /* Quitar subrayado de los enlaces*/
+  /* border: none;*/
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*permite incluir el relleno y el borde en el ancho 
+                             y alto total de un elemento*/
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+}
+
+/*colores*/
+/*colores*/
+.divModalContainer {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.divModalContainer__divModalDialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.divModalContainer__divModalDialog__a {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.divModalContainer__divModalDialog__img {
+  padding-bottom: 1rem;
+}
+
+.divModalContainer__divModalDialog__h {
+  padding: 1rem 0;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #457B9D;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.divModalContainer__divModalDialog__p {
+  text-align: center;
+  font-size: 1rem;
+  color: #457B9D;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.divModalContainer:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.divModalContainer:target__divModalDialog__a:hover {
+  background: #00d9ff;
+}
+
+/*@import "../utilidades/variables"; */
+/*colores*/
+/*colores*/
+/*este mapa quedará aquí solo para el registro, ya que su uso en los partial ha sido reemplazado con 
+el mixin "letra-personalizada" que es una función mucho más flexible y por lo tanto más eficiente */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: #25282c;
+  text-decoration: none;
+}
+
+.body__divGlobal {
+  padding: 0;
+}
+
+@-webkit-keyframes colorear {
+  /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+    */
+  /*Así se se realiza el llamado a este @keyframe: 
+    .contenedor {animation: colorear 6s ease-in-out 0s infinite reverse none; }*/
+  0% {
+    background: #E2E1B9;
+  }
+  25% {
+    background: #50b2c0;
+  }
+  50% {
+    background: #FAAA8D;
+  }
+  75% {
+    background: #E49273;
+  }
+  100% {
+    background: #FBF2C0;
+  }
+}
+
+@keyframes colorear {
+  /*ANIMACIÓN PARA EL HEADER
+    Parámetros de la animación:
+    1) animation-name (para usar varias animaciones se deben separar con coma)
+    2) animation-duration (duración total de animación en segundos)
+    3) animation-timing-function (forma en que se reproduce la animación)
+        •	ease-in: comenzará la animación lentamente y finalizará a toda velocidad.
+        •	ease-out: iniciará la animación a toda velocidad, luego terminará lentamente.
+        •	ease-in-out. comenzará lentamente, será más rápido en el medio de la animación y luego terminará lentamente.
+        •	ease: es como easy-in-out, excepto que comienza ligeramente más rápido de lo que termina.
+        •	Linear: no usa relajación
+    4) animation-delay (tiempo que debe esperar el navegador para iniciar animación)
+    5) animation-iteration-count (cantidad de iteraciones. Acepta un número entero o el valor infinite)
+    6) animation-direction (dirección de la animación: normal| reverse| alternate| alternate-reverse)
+    7) animation-fill-mode (define cómo afecta la animación a los estilos del elemento: none| forward| Backwards| both)
+    */
+  /*Así se se realiza el llamado a este @keyframe: 
+    .contenedor {animation: colorear 6s ease-in-out 0s infinite reverse none; }*/
+  0% {
+    background: #E2E1B9;
+  }
+  25% {
+    background: #50b2c0;
+  }
+  50% {
+    background: #FAAA8D;
+  }
+  75% {
+    background: #E49273;
+  }
+  100% {
+    background: #FBF2C0;
+  }
+}
+
+/*colores*/
+.header {
+  background-color: #FAAA8D;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 0.5rem #50B2C0 solid;
+  border-bottom: 0.5rem #50B2C0 solid;
+  /*height: 5.0em; /*(120px aprox)*/
+  animation: colorear 6s ease-in-out 0s infinite reverse none;
+}
+
+.header__divTitulo__h1 {
+  font-size: 2rem;
+  letter-spacing: 0.8rem;
+  text-shadow: #feefdd 3px 3px 7px;
+}
+
+.header__divInteractivo {
+  /* @include display-flex (display, flex-direccion, flex-wrap, justify-content, align-item, gap)*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.header__divInteractivo__buscador {
+  width: 250px;
+  max-width: 300px;
+  height: 28px;
+  padding: 0 1rem;
+  border: 1px solid;
+  border-color: #969696;
+  -webkit-box-shadow: #feefdd 1px 1px 5px 1px;
+          box-shadow: #feefdd 1px 1px 5px 1px;
+  border-radius: 5px;
+  display: block;
+}
+
+.header__divInteractivo__a__img {
+  display: block;
+}
+
+/*colores*/
+/*colores*/
+@-webkit-keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
+  }
+}
+@keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
+  }
+}
+
+/*colores*/
+.nav {
+  background-color: #fddcc7;
+  border-width: 1px;
+  border-bottom: 2px solid #50B2C0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.nav__divBarra__divMenu__ul {
+  /*padre (menú)*/
+  gap: 0.1rem;
+  /* lex-start alinea los box (cajas) hacia la izquierda, 
+        mientras que text-alingn:left alinea el texto dentro del box hacia la izquierda */
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.nav__divBarra__divMenu__ul__li {
+  /*padre (hijo (item de menú)*/
+  position: relative;
+  /*posición relativa para el menú padre*/
+  padding: 0.1rem;
+}
+
+.nav__divBarra__divMenu__ul__li__ul {
+  /* nieto (submenú, hijo del item y nieto del menú) */
+  display: none;
+  position: absolute;
+  /*posición posición relativa para el submenú hijo*/
+  top: 41px;
+  left: 0px;
+  background-color: #9FC8D9;
+  -webkit-box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+          box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+  border-radius: 0px 0px 5px 5px;
+  list-style: none;
+  z-index: 1000;
+}
+
+.nav__divBarra__divMenu__ul__li:hover {
+  background: #50B2C0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+  border-radius: 2px;
+  /*#6D5959;*/
+}
+
+.nav__divBarra__divMenu__ul__li__ul__li__a:hover {
+  border-bottom: 1px solid #969696;
+}
+
+.nav__divBarra__divMenu__ul__li:hover .nav__divBarra__divMenu__ul__li__ul {
+  display: block;
+}
+
+/*los siguientes id se crean para establecer prioridad sobre clases propias de bootstrap, 
+  ya que boostrap configuró el componente nav usando clases que no permiten la sobre-escritura de 
+  sus propiedades. La sobre-escritura de propiedades solo es posible con id */
+#nav__divBarra__divMenu__ul__li__a {
+  /* @include letra-personalizada (text-align, font-size, color, letter-spacing,  text-decoration, font-family, text-transform, font-weight) */
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+  /*Propiedad afectada + tiempo de desplazamiento + forma de desplazarse +tiempo para iniciar; */
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#nav__divBarra__divMenu__ul__li__a:hover {
+  color: #FEEFDD;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#nav__divBarra {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.body__carousel-inner {
+  height: 580px;
+}
+
+.body__carousel-inner__divImagen--img {
+  height: 580px;
+}
+
+.main {
+  padding: 3rem 1rem;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*colores*/
+/*colores*/
+.section1__divTitulo__h {
+  /* alineación, tamano, color, espacio, decoracion, familia, mayuscula, negrita*/
+  /*@include letra-personalizada (center, 1.8rem, $divEncabezado1, 4.09px, none, $tipografia-h, uppercase, 500)*/
+  text-align: center;
+  font-size: 1.25rem;
+  color: #25282c;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.section1__divContent {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/*colores*/
+.divCard {
+  /*Esta tarjeta se usa en el index> sección #1*/
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.divCard__divImagenes {
+  display: inline-block;
+  position: relative;
+  -webkit-box-shadow: 5px 5px 15px rgba(100, 100, 100, 0.7);
+          box-shadow: 5px 5px 15px rgba(100, 100, 100, 0.7);
+  max-width: 250px;
+  max-height: 340px;
+  overflow: hidden;
+}
+
+.divCard__h__a {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #222222;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 0.2rem;
+  /*animar enlace parte #1*/
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cf5053), to(#cf5053));
+  background-image: linear-gradient(#cf5053, #cf5053);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  -webkit-transition: background-size .4s;
+  transition: background-size .4s;
+}
+
+.divCard__h__a:hover, .divCard__h__a:active, .divCard__divCard__h__a:focus {
+  color: #cf5053;
+  /*animar enlace parte #2*/
+  background-size: 100% 1px;
+}
+
+.divCard__p__span {
+  text-align: center;
+  font-size: 1rem;
+  color: #cf5053;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.divOverlayImg {
+  /*overlay-img*/
+  /*secuencia 1*/
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 100%;
+  visibility: hidden;
+  z-index: 10;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #FFF;
+}
+
+.divCard:hover .divCard__divImagenes .divOverlayImg,
+.divCard:focus .divCard__divImagenes .divOverlayImg {
+  left: 0;
+  right: 0;
+  visibility: visible;
+}
+
+.img-responsive {
+  width: auto;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  overflow: hidden;
+}
+
+.aside {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0rem;
+}
+
+.aside__h {
+  text-align: center;
+}
+
+/*colores*/
+.aside__h {
+  text-align: center;
+  font-size: 1rem;
+  color: #FB6900;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.aside__divPublicidad {
+  width: 100%;
+  margin-bottom: 2rem;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+}
+
+/*colores*/
+.form {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border: solid 1px #c8c8c8;
+  max-width: 325px;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__divInput__input {
+  /*box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid rgb(200, 200, 200);*/
+  width: 15rem;
+  height: 1.6rem;
+  font: .9rem "typewriter", sans-serif;
+}
+
+.form__divInput__input:focus {
+  /*color resaltado al recibir foco*/
+  background: #FEEFDD;
+}
+
+.form__divInput__label {
+  width: 15rem;
+  height: .9rem;
+  /*padding: 10px 0 0 0;*/
+  font: 1rem "typewriter", sans-serif;
+  color: #6c757d;
+}
+
+.form__divInput__textarea {
+  width: 15rem;
+  height: 5rem;
+}
+
+.form__divInput__textarea:focus {
+  /*color resaltado al recibir foco*/
+  background: #FEEFDD;
+}
+
+.form__button {
+  width: 8rem;
+  height: 2.3rem;
+  /*mantener la coherencia de los formularios con el resto de elementos*/
+  font-family: inherit;
+  font-size: 100%;
+  font: bold 1rem sans-serif;
+  background: #201E1F;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.form__button:after {
+  content: " >>>";
+}
+
+.form__button:hover, .form__button:focus {
+  background: #FF4000;
+}
+
+/*colores*/
+/*colores*/
+.divCardPublicidad {
+  overflow: hidden;
+  width: 19rem;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background: #27272B;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCardPublicidad__divEncabezado {
+  /* @include (text-align, width, height, padding, margin, background, border); */
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: #27272B;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+  -webkit-animation: relampago-A 0.9s linear 0s infinite alternate none;
+          animation: relampago-A 0.9s linear 0s infinite alternate none;
+}
+
+.divCardPublicidad__divEncabezado__a {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #c8c8c8;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  /*animation: animation-Name, duración, curvaBézier, demora, iteraciones, dirección-Move, modo-Relleno*/
+  -webkit-animation: relampago-B 2s linear 0s infinite alternate none;
+          animation: relampago-B 2s linear 0s infinite alternate none;
+}
+
+.divCardPublicidad__divEncabezado__a:hover {
+  color: #BBBB0C;
+}
+
+@-webkit-keyframes relampago-A {
+  0% {
+    background: black;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    background: #b0a06b;
+  }
+  70% {
+    background: black;
+  }
+  100% {
+    background: #b0a06b;
+  }
+}
+
+@keyframes relampago-A {
+  0% {
+    background: black;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  35% {
+    background: #b0a06b;
+  }
+  70% {
+    background: black;
+  }
+  100% {
+    background: #b0a06b;
+  }
+}
+
+@-webkit-keyframes relampago-B {
+  0% {
+    color: #ffffff;
+  }
+  35% {
+    color: #BBBB0C;
+  }
+  70% {
+    color: #ffffff;
+  }
+  100% {
+    color: #457B9D;
+  }
+}
+
+@keyframes relampago-B {
+  0% {
+    color: #ffffff;
+  }
+  35% {
+    color: #BBBB0C;
+  }
+  70% {
+    color: #ffffff;
+  }
+  100% {
+    color: #457B9D;
+  }
+}
+
+.divCardPublicidad__divCuerpo, .divCardPublicidad__divCuerpo--1 {
+  /*se declara un background-image al final del código, dentro de un extends*/
+  width: 100%;
+  height: 17rem;
+  background-size: cover;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCardPublicidad__divCuerpo--1 {
+  background-image: url("./multimedia/aside/publicidadLorenzo.jpg");
+  /*   
+        }
+        &--2 {
+            @extend .divCardPublicidad__divCuerpo;
+            background-image: url("../../../multimedia/aside/publicidad2.png"); 
+        } */
+}
+
+.divCardPublicidad__divCuerpo__h {
+  margin: 0.7rem 0;
+}
+
+.divCardPublicidad__divCuerpo__h__a {
+  text-align: center;
+  font-size: 1rem;
+  color: #e2e1e0;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-bottom: 0.2rem;
+  /*animar enlace parte #1*/
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbcecf), to(#d39596));
+  background-image: linear-gradient(#c9b5b5, #a87d7e);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  -webkit-transition: background-size .4s;
+  transition: background-size .4s;
+}
+
+.divCardPublicidad__divCuerpo__h__a:hover, .divCardPublicidad__divCuerpo__h__a:active, .divCardPublicidad__divCuerpo__h__a:focus {
+  color: #bbb3b3;
+  /*animar enlace parte #2*/
+  background-size: 100% 1px;
+}
+
+.divCardPublicidad__divCuerpo__span {
+  width: 95%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #25282c;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0.7rem 0;
+  color: #c8c8c8;
+}
+
+.divCardPublicidad__divCuerpo__span__p {
+  margin-bottom: 0.8rem;
+}
+
+/*colores*/
+/*colores*/
+.footer {
+  position: relative;
+  background: #27272B;
+  /*height: 5.0em; /*(120px aprox)*/
+}
+
+.footer__fila1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 3rem;
+  margin: 1rem;
+}
+
+.footer__fila1__divMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__fila1__divMenu__ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 3rem;
+  padding: 0;
+}
+
+.footer__fila1__divMenu__ul__li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.2rem;
+}
+
+.footer__fila1__divMenu__ul__li__a, .footer .itemSiguenos__a {
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+  text-align: center;
+  font-size: 1rem;
+  color: #FEEFDD;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.footer__fila1__divMenu__ul__li__a:hover, .footer .itemSiguenos__a:hover {
+  color: #FB6900;
+  -webkit-transform: scale(1.11);
+          transform: scale(1.11);
+}
+
+.footer__fila1__divMenu__ul__li__ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.7rem;
+}
+
+.footer .itemSiguenos__a {
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+  color: #FB6900;
+  letter-spacing: 3px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  padding-top: 3px;
+  /*alineación minúscula*/
+}
+
+.footer .itemSiguenos__a:hover {
+  color: #FEEFDD;
+}
+
+.footer__fila2 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem 1rem 0 1rem;
+  /*se omite margin bootom ya que el elemento <p> trae por default 1rem abajo */
+}
+
+.footer__fila2__divCopyrigt__p {
+  /* @include letra-personalizada(center, 1.8rem, $black, 3.09px, none, $tipografia-gral, uppercase, 500); */
+  text-align: center;
+  font-size: 0.75rem;
+  color: #FEEFDD;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Arial, Helvetica, sans-serif";
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/*colores*/
+@-webkit-keyframes rotar {
+  /*Así se hace el llamado a este keyframes
+      a:hover {  animation: rotar 1s ease 0s 1 normal forwards;}*/
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+@keyframes rotar {
+  /*Así se hace el llamado a este keyframes
+      a:hover {  animation: rotar 1s ease 0s 1 normal forwards;}*/
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    color: #FB6900;
+  }
+}
+
+/*colores*/
+.prod__aside {
+  margin-top: 3rem;
+}
+
+.prod__aside__div1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+}
+
+.prod__aside__div1__divTitulo__h {
+  text-align: center;
+  font-size: 1rem;
+  color: #FB6900;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.prod__aside__div1__divMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.prod__aside__div1__divMenu__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+  padding-left: 0;
+  /*reseteo*/
+}
+
+.prod__aside__div1__divMenu__ul__li {
+  width: 100%;
+  border-bottom: solid 0.1rem #BBBB0C;
+}
+
+.prod__aside__div1__divMenu__ul__li__a {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #25282c;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: transparent;
+  /*transition: Propiedad afectada + 
+                        tiempo de desplazamiento + 
+                        forma de desplazarse +
+                        tiempo para iniciar*/
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.prod__aside__div1__divMenu__ul__li__a:hover {
+  /* animation: nombreAnimación duración modoBézier 
+                    tiempoDEnicio iteraciones direcciónDEmovimiento modoDErelleno; */
+  -webkit-animation: rotar 1s ease 0s 1 normal forwards;
+          animation: rotar 1s ease 0s 1 normal forwards;
+}
+
+/*colores*/
+.prod__section1__divTitulo__h {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #25282c;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.prod__section1__divContent {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+/*colores*/
+@keyframes escalar {
+  /*Así se llama a esta @keyframe:
+   img:hover { animation: escalar 1s ease 0.3s 1 normal forwards; } */
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    color: #FEEFDD;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    color: #FEEFDD;
+  }
+}
+
+.divCardProductos {
+  width: 220px;
+  height: 400px;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #b4b4b4;
+}
+
+.divCardProductos__a__img {
+  /*border: 1px solid rgb(200, 200, 200);*/
+  width: 100%;
+  /*padding-top: 1rem;*/
+}
+
+.divCardProductos__a__img:hover {
+  -webkit-animation: escalar 1s ease 0.3s 1 normal forwards;
+          animation: escalar 1s ease 0.3s 1 normal forwards;
+}
+
+.divCardProductos__divDescrip {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divCardProductos__divDescrip__h {
+  text-align: center;
+}
+
+.divCardProductos__divDescrip__p {
+  color: red;
+  margin: 0;
+}
+
+.divCardProductos__divDescrip__a {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.prod__section2__divPag {
+  padding: 1rem 4rem;
+}
+
+/*colores*/
+.desp__main {
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.desp__main__divLayout {
+  width: 100%;
+}
+
+.desp__main__divLayout__row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desp__main__divLayout__row__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*colores*/
+/*colores*/
+.desp__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  width: 60%;
+  border: solid 2px #B0A06B;
+  border-radius: 30px;
+  -webkit-box-shadow: #969696 10px 10px 20px 10px;
+          box-shadow: #969696 10px 10px 20px 10px;
+}
+
+.desp__section1__divIsla {
+  width: 80%;
+}
+
+.desp__section1__divIsla__divTitulo {
+  width: 100%;
+}
+
+.desp__section1__divIsla__divTitulo__h2 {
+  text-align: left;
+  font-size: 1.25rem;
+  color: #25282c;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.desp__section1__divIsla__divTitulo__h3 {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #25282c;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.desp__section1__divIsla__divContent {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.desp__section1__divIsla__divContent__span__p {
+  color: #6c757d;
+  text-align: justify;
+}
+
+.serv__main {
+  background: radial-gradient(#50B2C0 2px, transparent 3px), radial-gradient(#50B2C0 2px, transparent 3px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #FAAA8D 75px, #FAAA8D 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #FAAA8D 76px, #FAAA8D 77px, transparent 78px, transparent 109px), #fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.serv__main__divLayout__row {
+  margin: 0;
+}
+
+.serv__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5rem;
+  margin: 2rem 0;
+}
+
+/*colores*/
+/*colores*/
+.divCardPostal {
+  max-width: 700px;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  border: 1px solid #b4b4b4;
+  -webkit-box-shadow: #969696 5px 5px 10px;
+          box-shadow: #969696 5px 5px 10px;
+}
+
+.divCardPostal__divTitulo {
+  /* @include (text-align, width, height, padding, margin, background, border); */
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: #27272B;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.divCardPostal__divTitulo__h {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+  background-image: url(https://www.mozart.cl/wp-content/uploads/2020/05/gris.jpg);
+  background-position: 50%;
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 350px;
+  max-height: 350px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.divCardPostal__divCuerpo__divImg {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 35%;
+}
+
+.divCardPostal__divCuerpo__divImg__img {
+  max-width: 100%;
+  /* el 100% del max-width es en relación a su contenedor padre */
+}
+
+.divCardPostal__divCuerpo__divP {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  width: 65%;
+  padding: 1rem;
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.divCardPostal__divCuerpo__divP--p {
+  text-align: justify;
+  font-size: 1rem;
+  color: #666666;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.divCardPostal__divCuerpo__divP--p2 {
+  text-align: center;
+  color: #6c757d;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.divCardPostal__divTitulo--par {
+  background: #B0A06B;
+}
+
+.divCardPostal__divCuerpo--par {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+/*colores*/
+.noso__main {
+  /*
+    background: linear-gradient(90deg, rgba(254,239,221,1) 0%, rgba(255,249,241,1) 20%, 
+    rgba(255,255,255,1) 50%, rgba(255,249,241,1) 80%, rgba(254,239,221,1) 100%);
+    */
+}
+
+.noso__main__divLayout {
+  width: 70%;
+}
+
+.noso__main__divLayout__row__col {
+  width: 100%;
+}
+
+/*colores*/
+/*colores*/
+.noso__section1 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.noso__section1__divTitulo {
+  width: 100%;
+}
+
+.noso__section1__divTitulo__h {
+  text-align: left;
+  font-size: 1.25rem;
+  color: #25282c;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: black, 1px, 1px, 5px;
+}
+
+.noso__section1__article {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+  text-align: center;
+  background: #FFFFFF;
+  width: 60%;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 1px 1px 15px 1px;
+          box-shadow: rgba(0, 0, 0, 0.8) 1px 1px 15px 1px;
+}
+
+.noso__section1__article__h {
+  /*($alineación, $tamano, $color, $espaciado, $decoracion, $familia, $mayuscula, $negrita)*/
+  text-align: left;
+  font-size: 1rem;
+  color: #B0A06B;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.noso__section1__article__p {
+  text-align: justify;
+  font-size: 0.9rem;
+  color: #6c757d;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.noso__section1__article2 {
+  /*subclase del artículo #2*/
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.noso__section2 {
+  /* @include display-flex ($desplegar, $flexDireccion, $wrap, $justifyContent, $alignItem, $gap)  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 4rem;
+}
+
+.noso__section2__divTitulo {
+  width: 100%;
+}
+
+.noso__section2__divTitulo__h3 {
+  text-align: left;
+  font-size: 1.25rem;
+  color: #B0A06B;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: black, 1px, 1px, 5px;
+}
+
+.noso__section2__span {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
+}
+
+.noso__section2__span__p {
+  text-align: left;
+  font-size: 1rem;
+  color: #25282c;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.noso__section2__divCuerpo__iframe {
+  width: 600px;
+  height: 350px;
+}
+
+/*******    (1)  DISPOSITIVO XS - EXTRA SMALL*********/
+@media only screen and (min-width: 200px) and (max-width: 575px) {
+  body {
+    background: blueviolet;
+  }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
+  .divModalContainer__divModalDialog {
+    width: 250px;
+  }
+  .divModalContainer__divModalDialog__h {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  .divModalContainer__divModalDialog__img {
+    width: 200px;
+  }
+  .divModalContainer__divModalDialog__p {
+    font-size: .8rem;
+  }
+  .header__divTitulo__h1 {
+    font-size: 1.5rem;
+  }
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+    padding: .5rem .8rem;
+  }
+  .body__carousel-inner {
+    height: 250px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 250px;
+  }
+  .form__divInput__input,
+  .form__divInput__label,
+  .form__divInput__textarea {
+    width: 14rem;
+    padding-left: 2rem;
+    padding-right: 0rem;
+  }
+  .footer__fila1__divMenu__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
+  .prod__aside__div1__divMenu__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
+  }
+  /*página servicios.html*/
+  .divCardPostal__divTitulo {
+    font-size: .8rem;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 220px;
+  }
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .7rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divP--p2 {
+    font-size: .8rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 220px;
+  }
+  .desp__section1 {
+    width: 100%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2, .desp__section1__divIsla__divTitulo__h3 {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 100%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .noso__section2__divCuerpo__iframe {
+    width: 320px;
+    height: 240px;
+  }
+}
+
+/*******    (2)  DISPOSITIVO SM - SMALL*********/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  body {
+    background: tomato;
+  }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
+  .header__divTitulo__h1 {
+    font-size: 1.5rem;
+  }
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+    padding: .5rem .8rem;
+  }
+  .body__carousel-inner {
+    height: 300px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 300px;
+  }
+  .footer__fila1__divMenu__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
+  .prod__aside__div1__divMenu__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
+  }
+  /*página servicios.html*/
+  .divCardPostal__divTitulo {
+    font-size: .8rem;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 250px;
+  }
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .9rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divP--p2 {
+    font-size: .9rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 250px;
+  }
+  .desp__section1 {
+    width: 100%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2, .desp__section1__divIsla__divTitulo__h3 {
+    font-size: 1.07rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 100%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .noso__section2__divCuerpo__iframe {
+    width: 480px;
+    height: 300px;
+  }
+}
+
+/********     (3)   DISPOSITIVO MD - MEDIANO      *********/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    background: green;
+  }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
+  .nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav__divBarra {
+    /*deja el menú hambueguesa al extremo izquierdo y a continuación el logo*/
+    /*
+            Las siguientes 3 líneas se omiten porque ya existen fuera de responsive: 
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: flex-end;
+            */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  .nav__divBarra__divMenu__ul {
+    gap: 0.3rem;
+  }
+  #nav__divBarra__divMenu__ul__li__a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  #nav__divBarra__divMenu__ul__li__a:hover {
+    -webkit-transform: none;
+            transform: none;
+    padding: .5rem .8rem;
+  }
+  .body__carousel-inner {
+    height: 400px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 400px;
+  }
+  /*productos.html*/
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
+  .prod__aside__div1__divMenu__ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .prod__aside__div1__divMenu__ul__li {
+    width: auto;
+  }
+  /*página servicios.html*/
+  .divCardPostal {
+    max-width: 620px;
+  }
+  .divCardPostal__divTitulo {
+    font-size: 1rem;
+  }
+  .divCardPostal__divCuerpo, .divCardPostal__divCuerpo--par {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 260px;
+  }
+  .divCardPostal__divCuerpo__divP--p {
+    font-size: .950rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divP--p2 {
+    font-size: .9rem;
+    margin-bottom: 3px;
+  }
+  .divCardPostal__divCuerpo__divImg__img {
+    height: 260px;
+  }
+  .desp__section1 {
+    width: 80%;
+    margin: 0;
+    gap: 3rem;
+    /*resetear bordes y sombras usados en breakpoints más grandes */
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .desp__section1__divIsla {
+    width: 100%;
+    padding: 2rem;
+    /*se reconstruyen bordes y sombras para 2 parrafos en lugar de una sola sección*/
+    border: solid 2px #B0A06B;
+    border-radius: 30px;
+    -webkit-box-shadow: #969696 10px 10px 20px 10px;
+            box-shadow: #969696 10px 10px 20px 10px;
+  }
+  .desp__section1__divIsla__divTitulo__h2, .desp__section1__divIsla__divTitulo__h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .noso__main__divLayout {
+    width: 80%;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 85%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+/*******     (4)   DISPOSITIVO LG LARGE      ********/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  body {
+    background: blue;
+  }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
+  .body__carousel-inner {
+    height: 500px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 500px;
+  }
+  .prod__main {
+    padding-top: 2rem;
+  }
+  .prod__main__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2rem;
+  }
+  .prod__aside {
+    margin-top: 0rem;
+  }
+  .prod__aside__div1__divTitulo {
+    display: none;
+  }
+  .prod__aside__div1__divMenu__ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .noso__section1 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__divTitulo__h {
+    text-align: center;
+  }
+  .noso__section1__article {
+    width: 85%;
+    font-size: 0.8rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .noso__section1__article__h {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .noso__section1__article__p {
+    width: 100%;
+  }
+  .noso__section1__article2 {
+    /*subclase del artículo #2*/
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+/*******    (5)   DISPOSITIVO XL EXTRA-LARGE      ********/
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  body {
+    background: #5daedd;
+  }
+  .body__divGlobal {
+    padding: 0 12px;
+  }
+  /*para ver la línea vertical de color*/
+  .body__carousel-inner {
+    height: 550px;
+  }
+  .body__carousel-inner__divImagen--img {
+    height: 550px;
+  }
+  .noso__section1__article {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1400px) {
+  body {
+    background: #ffffff;
+  }
+}
+
+body {
+  background: #ffffff;
+}
+
+.body__divGlobal {
+  padding: 0;
+}

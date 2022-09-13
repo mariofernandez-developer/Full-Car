@@ -1,16 +1,481 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Car</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="full car"
+        content="En este sitio podras encontrar una gran variedad de productos, y al mejor precio.">
+    <meta name="keywords"
+        content="productos de mecanica integral">
+
+    <!-- Bootstrap y CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./main.css">
+
+    <title>Full Car</title>
 </head>
 
-<body>
-  <h1>TITULO</h1>
+<body><!-- BODY ------------------------------------------------->
+    
+    <div class="container-fluid body__divGlobal">
 
+        <!-- HEADER--------------------------------------------------------------------------->
+        <!-- nav----------------------------------------------------------------------------->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light nav" style="background-color: #BBBBBE;">
+            <div class="container-fluid nav__divBarra" id="nav__divBarra">
+                <a class="navbar-brand nav__divBarra__a" href="./index.html">
+                    <h3>Full Car</h3>
+                </a>
+
+                <button class="navbar-toggler nav__divBarra__button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#miMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse nav__divBarra__divMenu" id="miMenu">
+                    <ul class="navbar-nav nav__divBarra__divMenu__ul">
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="index.html">Inicio</a></li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item nav__divBarra__divMenu__ul__li"><a class="nav-link dropdown-toogle"
+                                id="nav__divBarra__divMenu__ul__li__a" href="./paginas/despachos.html">Despachos</a>
+                        </li>
+                        <li class="nav-item dropdown nav__divBarra__divMenu__ul__li">
+                            <a class="nav-link dropdown-toogle" id="nav__divBarra__divMenu__ul__li__a" href="#miModal"
+                                data-bs-toggle="dropdown">Nosotros</a>
+                            <ul class="dropdown-menu nav__divBarra__divMenu__ul__li__ul">
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="./paginas/nosotros.html">Nuestra Empresa</a></li>
+                                <li class="nav__divBarra__divMenu__ul__li__ul__li"><a
+                                        class="dropdown-item nav__divBarra__divMenu__ul__li__ul__li__a"
+                                        href="#miModal">Contacto</a></li>
+                            </ul>
+                        </li><!-- Fin enlace desplegable -->
+                    </ul> <!-- Fin lista principal -->
+                    <div class="col-lg-6 header__divInteractivo">
+                        <input class="header__divInteractivo__buscador" type="search" placeholder="Buscar">
+                        <a class="header__divInteractivo_a" href="#miModal">
+                            <img class="header__divInteractivo__a__img"
+                                src="./multimedia/header/ico-carritoDEcompras-negro.1.svg" width="35px" height="35px">
+                        </a>
+                        <a class="header__divInteractivo_a" href="#miModal">
+                            <img class="header__divInteractivo__a__img" src="./multimedia/header/ico-user.svg"
+                                width="35px" height="35px">
+                        </a>
+                    </div>
+                </div> 
+            </div> <!-- Fin container-fluid" -->
+        </nav>
+
+        <!-- Carrusel ------------------------------------------------------------>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner body__carousel-inner">
+                <div class="carousel-item active body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/2.jpg" class="d-block w-100 body__carousel-inner__divImagen--img"
+                        alt="...">
+                </div>
+                <div class="carousel-item body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/1.jpg"
+                        class="d-block w-100 d-block w-100 body__carousel-inner__divImagen--img" alt="...">
+                </div>
+                <div class="carousel-item body__carousel-inner__divImagen">
+                    <img src="./multimedia/Portada/3.jpg"
+                        class="d-block w-100 d-block w-100 body__carousel-inner__divImagen--img" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Proximo</span>
+            </button>
+        </div> <!-- fin carrusel de bootstrap -->
+
+    <main class="content-fluid main">
+        <div class="content-fluid">
+            <div class="row index__main__row">
+                <div class="col-lg-8">
+                        <section class="section section1">
+                            <div class="section1__divTitulo">
+                                <h2 class="section1__divTitulo__h">Productos del mes</h2>
+                            </div><br>
+
+                            <div class="section1__divContent">
+
+                                <!-- =========PRODUCTO DESTACADO # 1===================-->
+                                <div class="divCard">
+                                    <div class="divCard__divImagenes"">
+                                    <div class=" divMainImg">
+                                        <a href="#miModal">
+                                            <img class="img-responsive" src="./multimedia/Portada/Destacados/1.jpg"
+                                                alt="Bomba de agua Corsa" width="260px;" height="350px;">
+                                        </a>
+                                    </div>
+                                    <a href="#miModal">
+                                        <div class="divOverlayImg">
+                                            <img class="img-responsive" src="./multimedia/Portada/Destacados/1.1.jpg"
+                                                alt="Bomba de agua Corsa" width="260px;" height="350px;">
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <!-- DIV Descripción -->
+                                <h3 class="divCard__h">
+                                    <a class="divCard__h__a" href="#miModal">Bomba de Agua Chevrolet Corsa</a>
+                                </h3>
+                                <p class="divCard_p">
+                                    <ins><span class="divCard__p__span">$12.999</span></ins>
+                                </p>
+                            </div>
+
+
+                            <!-- ===========PRODUCTO DESTACADO # 2===================-->
+                            <div class="divCard">
+
+                                <!-- DIV Imagen Duplex -->
+                                <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                                    <a href="#miModal">
+                                        <img class="img-responsive" src="./multimedia/Portada/Destacados/2.jpg"
+                                            alt="Radiador Gol Trend" width="260px;" height="350px;">
+                                    </a>
+                                </div>
+
+                                <!-- Imagen Secundaria -->
+                                <a href="#miModal">
+                                    <div class="divOverlayImg">
+                                        <img class="img-responsive" src="./multimedia/Portada/Destacados/2.1.jpg"
+                                            alt="Radiador Gol Trend" width="260px;" height="350px;">
+                                    </div>
+                                </a>
+
+                            </div>
+
+                            <!-- DIV Descripción -->
+                            <h3 class="divCard__h">
+                                <a class="divCard__h__a" href="#href=" #miModal">Radiador Gol Trend</a>
+                            </h3>
+                            <p class="divCard_p">
+                                <ins><span class="divCard__p__span">$26.999</span></ins>
+                            </p>
+                    </div>
+
+
+                    <!-- ===========PRODUCTO DESTACADO # 3===================-->
+                    <div class="divCard">
+
+                        <!-- DIV Imagen Duplex -->
+                        <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                            <a href="#miModal">
+                                <img class="img-responsive" src="./multimedia/Portada/Destacados/3.1.jpg"
+                                    alt="Tapa de cilindros Fiat Punto" width="260px;" height="350px;">
+                            </a>
+                        </div>
+
+                        <!-- Imagen Secundaria -->
+                        <a href="#miModal">
+                            <div class="divOverlayImg">
+                                <img class="img-responsive" src="./multimedia/Portada/Destacados/3.jpg"
+                                    alt="Tapa de cilindros Fiat Punto" width="260px;" height="350px;">
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- DIV Descripción -->
+                    <h3 class="divCard__h">
+                        <a class="divCard__h__a" href="#miModal">Tapa de cilindros Fiat Punto</a>
+                    </h3>
+                    <p class="divCard_p">
+                        <ins><span class="divCard__p__span">$96.999</span></ins>
+                    </p>
+                </div>
+
+
+                <!-- ===========PRODUCTO DESTACADO # 4===================-->
+                <div class="divCard">
+
+                    <!-- DIV Imagen Duplex -->
+                    <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                        <a href="#miModal">
+                            <img class="img-responsive" src="./multimedia/Portada/Destacados/4.jpg"
+                                alt="Aceite Elaion 4T" width="260px;" height="350px;">
+                        </a>
+                    </div>
+
+                    <!-- Imagen Secundaria -->
+                    <a href="#miModal">
+                        <div class="divOverlayImg">
+                            <img class="img-responsive" src="./multimedia/Portada/Destacados/4.1.jpg"
+                                alt="Aceite Elaion 4T" width="260px;" height="350px;">
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- DIV Descripción -->
+                <h3 class="divCard__h">
+                    <a class="divCard__h__a" href="#miModal">Aceite Elaion 4T</a>
+                </h3>
+                <p class="divCard_p">
+                    <ins><span class="divCard__p__span">$5.990</span></ins>
+                </p>
+            </div>
+
+
+            <!-- ===========PRODUCTO DESTACADO # 5===================-->
+            <div class="divCard">
+
+                <!-- DIV Imagen Duplex -->
+                <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+                    <a href="#miModal">
+                        <img class="img-responsive" src="./multimedia/Portada/Destacados/5.1.jpg"
+                            alt="Pastilla de frenos Ch Celta" width="260px;" height="350px;">
+                    </a>
+                </div>
+
+                <!-- Imagen Secundaria -->
+                <a href="#miModal">
+                    <div class="divOverlayImg">
+                        <img class="img-responsive" src="./multimedia/Portada/Destacados/5.jpg" alt="Pastilla de frenos Ch Celta"
+                            width="260px;" height="350px;">
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- DIV Descripción -->
+            <h3 class="divCard__h">
+                <a class="divCard__h__a" href="#miModal">Pastilla de frenos Ch Celta</a>
+            </h3>
+            <p class="divCard_p">
+                <ins><span class="divCard__p__span">$8.990</span></ins>
+            </p>
+    </div>
+
+
+    <!-- ===========PRODUCTO DESTACADO # 6===================-->
+    <div class="divCard">
+
+        <!-- DIV Imagen Duplex -->
+        <div class="divCard__divImagenes"">
+
+                                    <!-- Imagen Principal -->
+                                    <div class=" divMainImg">
+            <a href="#miModal">
+                <img class="img-responsive" src="./multimedia/Portada/Destacados/6.1.jpg" alt="Bobina Peugeot 206" width="260px;"
+                    height="350px;">
+            </a>
+        </div>
+
+        <!-- Imagen Secundaria -->
+        <a href="#miModal">
+            <div class="divOverlayImg">
+                <img class="img-responsive" src="./multimedia/Portada/Destacados/6.jpg" alt="Bobina Peugeot 206" width="260px;"
+                    height="350px;">
+            </div>
+        </a>
+
+    </div>
+
+    <!-- DIV Descripción -->
+    <h3 class="divCard__h">
+        <a class="divCard__h__a" href="#miModal">Bobina Peugeot 206</a>
+    </h3>
+    <p class="divCard_p">
+        <ins><span class="divCard__p__span">$19.490</span></ins>
+    </p>
+    </div>
+
+    </div> <!-- fin div content que contiene los productos Destacados-->
+    </section>
+
+    <!-- Section #2  ----------------------->
+    <section class="section">
+        <div class="titulo"></div>
+        <div class="content"></div>
+    </section>
+
+                </div> <!-- fin col#1> sectiones--------- -->
+
+                <div class="col-lg-4">
+        <!-- ASIDE --------------------------------------------------- -->
+        <aside class="aside">
+
+            <div>
+                <h3 class="aside__h">Solicita Asesoramiento</h3><br>
+            </div>
+            <form class="form" method="get" action="#miModal">
+                <div class="mb-3 form__divInput">
+                    <label for="nom" class="form-label form__divInput__label">Nombre Completo</label>
+                    <input type="text" class="form-control form__divInput__input" id="nom" aria-describedby="nomHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="mail" class="form__divInput__label">Correo</label>
+                    <input type="mail" class="form-control form__divInput__input" id="mail">
+                </div>
+                <div class="mb-3">
+                    <label for="tel" class="form__divInput__label">Celular</label>
+                    <input type="tel" class="form-control form__divInput__input" id="mail">
+                </div>
+                <div class="mb-3">
+                    <label for="msj" class="form__divInput__label">Déjanos tu
+                        mensaje</label>
+                    <textarea class="form-control form__divInput__textarea" id="msj"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form__button">Enviar</button>
+            </form>
+
+
+            <!-- Aquí Publicidad ASIDE -->
+            <div class="aside__divPublicidad">
+
+                <!-- Publicidad #1 -->
+                <div class="divCardPublicidad">
+
+                    <div class="divCardPublicidad__divEncabezado">
+                        <a class="divCardPublicidad__divEncabezado__a" href="https://villard.cl/">Lorenzo</a>
+                    </div>
+
+                    <!-- "divCuerpo--1 será la clase hija que cargue un background-image de forma autónoma   -->
+                    <div class="divCardPublicidad__divCuerpo divCardPublicidad__divCuerpo--1">
+                        <h5 class="divCardPublicidad__divCuerpo__h">
+                            <a class="divCardPublicidad__divCuerpo__h__a" href="https://tiendagrupolorenzo.com.ar/">Lorenzo Automotores
+                            </a>
+                        </h5>
+
+                    </div>
+                    <span class="divCardPublicidad__divCuerpo__span">
+                        <p class="divCardPublicidad__divCuerpo__span--p">
+                            Esponsor oficial de FULL CAR. Conseguí tu usado al mejor precio.
+                        </p>
+                    </span>
+
+                </div> <!-- end Publicidad #1 -->
+            </div> <!-- end div Publicidad -->
+        </aside>
+                </div> <!-- fin col#2> aside --------------------->
+
+            </div> <!-- fin row-------- -->
+        </div> <!-- fin content-------- -->
+    </main> <!-- fin main-------- -->
+
+
+    <!-- footer ------------------------------------------------------------------------->
+    <footer class="footer">
+        <div class="content-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="footer__fila1">
+                        <div class="footer__fila1__divMenu">
+                            <ul class="footer__fila1__divMenu__ul">
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Políticas de
+                                        Privacidad</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Medios de pago</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Servicios de
+                                        entrega</a>
+                                </li>
+                                <li class="footer__fila1__divMenu__ul__li">
+                                    <a class="footer__fila1__divMenu__ul__li__a" href="#miModal">Opiniones</a>
+                                </li>
+
+
+                                <!-- Item RRSS "SÍGUENOS" > de aquí se desprende SUBMENÚ con íconos de facebook, instagram y twiter -->
+                                <li class="footer__fila1__divMenu__ul__li itemSiguenos">
+                                    <a class="footer__fila1__divMenu__ul__li__a itemSiguenos__a" href="#miModal">SIGUENOS</a>
+                                    <ul class="footer__fila1__divMenu__ul__li__ul">
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-facebook.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-twitter.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="footer__fila1__divMenu__submenuItem">
+                                            <a class="footer__fila1__divMenu__submenuItem__a" href="#miModal">
+                                                <img class="footer__fila1__divMenu__submenuItem__a__img" src="./multimedia/rrss/logos-instagram.svg" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li> <!-- fin Item-Sub-menú---------------------->
+                            </ul> <!-- fin Menú---------------------->
+                        </div> <!-- fin fila#1 > divMenú---------------------->
+                    </div> <!-- fin footer > fila#1---------------------->
+
+
+                    <div class="footer__fila2">
+                        <div class="footer__fila2__divCopyrigt">
+                            <p class="footer__fila2__divCopyrigt__p">&copy; Todos los Derechos Reservados 2022</p>
+                        </div>
+                    </div> <!-- fin footer > fila#2---------------------->
+
+                </div> <!-- end col footer------------->
+            </div> <!-- end row footer------------->
+        </div> <!-- end content footer------------->
+
+    </footer>
+
+    </div> <!--FIN DIV GENERAL DEL BODY  -->
+
+         <div id="miModal" class="content-fluid divModalContainer">
+            <div class="divModalContainer__divModalDialog">
+                <a href="#close" title="Close" class="divModalContainer__divModalDialog__a">X</a>
+                <h2 class="divModalContainer__divModalDialog__h">Estimado Usuario</h2>
+                <img class="divModalContainer__divModalDialog__img" src="./multimedia/site-build.png" width="350">
+                <p class="divModalContainer__divModalDialog__p">Lamentamos los inconvenientes. Estamos trabajando en la
+                    disponibilidad e integridad de esta página. </p>
+                <p class="divModalContainer__divModalDialog__p">Agradecemos tu comprensión.</p>
+            </div>
+        </div> <!-- fin VENTANA MODAL -->
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
+
 
 </html>
