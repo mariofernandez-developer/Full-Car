@@ -1,3 +1,4 @@
+
 package com.desarrollo.fullcar.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,3 +58,4 @@ public class Product {
 
 
 }
+
