@@ -1,78 +1,59 @@
+
 package com.desarrollo.fullcar.entities;
-
-import org.hibernate.annotations.ManyToAny;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
+import javax.persistence.Table;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name= "product")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+
 public class Product {
-    private String descripcion,marca,modelo,nombre;
-    private int precio,id;
-@ManyToOne(fetch = FetchType.EAGER)
-@JoinColumn(name = "fk_carrito", nullable = false)
 
-    private List<Categoria> categorias;
-    public Product() {
-    }
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private long id;
 
-    public Product(String descripcion, String marca, String modelo, String nombre, int precio, int id) {
-        this.descripcion = descripcion;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.id = id;
-    }
+        @Column(name="nombre")
+        private String nombre;
+        @Column(name="descripcion")
+        private String descripcion;
+        @Column(name="importado")
+        private boolean importado;
+        @Column(name="marca")
+        private String marca;
+        @Column(name="modelo")
+        private int modelo;
+        @Column(name="precio")
+        private float precio;
 
-    public String getDescripcion() {
-        return descripcion;
-    }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_categoria", nullable = false)
+    private Categoria categoria;
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
 
 
