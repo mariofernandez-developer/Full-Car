@@ -3,7 +3,7 @@ package com.desarrollo.fullcar.entities;
 public class Categoria {
     String accesorios, respuestosGenericos, repuestosOriginales;
 
-
+ //hola
     public Categoria() {
     }
 
