@@ -1,67 +1,52 @@
 package com.desarrollo.fullcar.entities;
 
-public class Client {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
+import javax.persistence.Table;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name= "client")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class Client implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     //Variables
-    String apellido, nombre;
-    int edad, id;
+    @Column(name="nombre")
+    private String nombre;
+    @Column(name="apellido")
+    private String apellido;
+    @Column(name="dni")
+    private int dni;
     private Carrito refCarrito; //Agregación de carrito.
     /*
       Falta en la clase main (por hacer en un futuro) culminar todas las relaciones de agregación. Hasta el momento
       solo se han creado las relaciones entre clases por debajo.
      */
 
-    //Constructores.
-    public Client() {
-    }
 
-    public Client(String apellido, String nombre, int edad, int id) {
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.id = id;
-    }
-
-    //Getters y Setters.
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Carrito getRefCarrito() {
-        return refCarrito;
-    }
-
-    public void setRefCarrito(Carrito refCarrito) {
-        this.refCarrito = refCarrito;
-    }
 
     //Metodos.
     public void agregarCarrito(Carrito refCarrito) {
