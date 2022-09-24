@@ -30,36 +30,27 @@ import lombok.Setter;
 @Setter
 @Builder
 public class Client implements Serializable{
+    //Variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    //Variables
     @Column(name="nombre")
     private String nombre;
     @Column(name="apellido")
     private String apellido;
     @Column(name="dni")
     private int dni;
-    private Carrito refCarrito; //Agregación de carrito.
-    /*
-      Falta en la clase main (por hacer en un futuro) culminar todas las relaciones de agregación. Hasta el momento
-      solo se han creado las relaciones entre clases por debajo.
-     */
 
-
-
-    //Metodos.
-    public void agregarCarrito(Carrito refCarrito) {
-        this.refCarrito = refCarrito;
-    }  //Agregación de Carrito.
-
+    //Métodos.
     public boolean login(){
         boolean prueba = true; //Variable a borrar, solo se creó para que no marque error.
         return prueba;
     }
 
     public boolean registrarse(){
-        boolean prueba = true; //Variable a borrar, solo se creó para que no marque error.
-        return prueba;
+        boolean prueba2 = true; //Variable a borrar, solo se creó para que no marque error.
+        return prueba2;
     }
+
+
 }

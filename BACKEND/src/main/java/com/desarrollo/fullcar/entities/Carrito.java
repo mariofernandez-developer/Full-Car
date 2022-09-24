@@ -1,55 +1,36 @@
 package com.desarrollo.fullcar.entities;
 
-public class Carrito {
+import java.io.Serializable;
+import javax.persistence.*;
 
-    int cantidadProducto, precioTotal;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.io.Serializable;
+
+
+@Entity
+@Table(name= "carrito")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class Carrito implements Serializable {
+    //Variables
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="cantidadProducto")
+    int cantidadProducto;
+    @Column(name="precioTotal")
+    int precioTotal;
+    @Column(name="descuento")
     boolean descuento;
-    private Product refProduct; //Agregación de producto.
 
-    //Constructores.
-    public Carrito() {
-    }
+    //Metodos y relaciones.
 
-    public Carrito(int cantidadProducto, int precioTotal, boolean descuento) {
-        this.cantidadProducto = cantidadProducto;
-        this.precioTotal = precioTotal;
-        this.descuento = descuento;
-    }
-
-    //Getters y Setters.
-    public int getCantidadProducto() {
-        return cantidadProducto;
-    }
-
-    public void setCantidadProducto(int cantidadProducto) {
-        this.cantidadProducto = cantidadProducto;
-    }
-
-    public int getPrecioTotal() {
-        return precioTotal;
-    }
-
-    public void setPrecioTotal(int precioTotal) {
-        this.precioTotal = precioTotal;
-    }
-
-    public boolean isDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(boolean descuento) {
-        this.descuento = descuento;
-    }
-
-    public Product getRefProduct() {
-        return refProduct;
-    }
-
-    public void setRefProduct(Product refProduct) {
-        this.refProduct = refProduct;
-    }
-
-    public void agregarProduct(Product refProduct) {
-        this.refProduct = refProduct;
-    } //Agregación de Producto.
 }

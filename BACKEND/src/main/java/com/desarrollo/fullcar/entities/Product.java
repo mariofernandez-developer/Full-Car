@@ -29,13 +29,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-
-public class Product {
-
+public class Product implements Serializable{
+        //Variables.
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
-
         @Column(name="nombre")
         private String nombre;
         @Column(name="descripcion")
@@ -49,10 +47,10 @@ public class Product {
         @Column(name="precio")
         private float precio;
 
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "fk_categoria", nullable = false)
-    private Categoria categoria;
+        //Metodos y relaciones.
+        @ManyToOne(fetch = FetchType.EAGER)
+        @JoinColumn(name = "fk_categoria", nullable = false)
+        private Categoria categoria;
 
 
 
