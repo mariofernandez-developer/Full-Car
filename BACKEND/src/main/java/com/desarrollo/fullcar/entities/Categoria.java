@@ -29,23 +29,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Categoria {
+public class Categoria implements Serializable{
+    //Variables.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String nombre;
     private boolean activo = true;
 
+    //Metodos y relaciones.
     @OneToMany(mappedBy = "categoria")
     private List<Product> products;
     String accesorios, respuestosGenericos, repuestosOriginales;
-
-
-
-
-
-
 
     @Override
     public String toString() {
