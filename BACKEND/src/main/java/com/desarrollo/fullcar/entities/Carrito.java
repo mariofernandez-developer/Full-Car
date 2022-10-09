@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -23,14 +25,17 @@ import java.io.Serializable;
 public class Carrito implements Serializable {
     //Variables
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="cantidadProducto")
-    int cantidadProducto;
-    @Column(name="precioTotal")
-    int precioTotal;
-    @Column(name="descuento")
-    boolean descuento;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long pk;
+    private Date fecha;
+    private Double total;
+
+    @ManyToOne
+    private Client cliente;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "carrito")
+    private List<DetalleCompra> listaDetalleCompra;
     //Metodos y relaciones.
 
 }

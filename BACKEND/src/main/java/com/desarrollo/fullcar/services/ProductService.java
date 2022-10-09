@@ -1,7 +1,8 @@
 package com.desarrollo.fullcar.services;
 
 import com.desarrollo.fullcar.entities.Client;
-import com.desarrollo.fullcar.repositories.ClientRepository;
+import com.desarrollo.fullcar.entities.Product;
+import com.desarrollo.fullcar.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,17 +11,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClientService implements BaseService<Client> {
-
+public class ProductService implements BaseService<Product> {
     @Autowired
-    private ClientRepository clientRepository;
-
+    private ProductRepository productRepository;
     @Override
     @Transactional  //hace una transaccion a la base de datos
-    public List<Client> findAll() throws Exception {
+    public List<Product> findAll() throws Exception {
         try{
-            List<Client> entidades = (List<Client>) clientRepository.findAll();
-            return entidades;
+            List<Product> productos = (List<Product>) productRepository.findAll();
+            return productos;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
@@ -28,9 +27,9 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client findById(Long id) throws Exception {
+    public Product findById(Long id) throws Exception {
         try{
-            Optional<Client> entityOptional = clientRepository.findById(id); //como no sabemos si va a haber un registro en la base de datos lo colocamos asi
+            Optional<Product> entityOptional = productRepository.findById(id); //como no sabemos si va a haber un producto en la base de datos lo colocamos asi
             return entityOptional.get();
 
         }catch (Exception e){
@@ -40,9 +39,9 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client save(Client entity) throws Exception {
+    public Product save(Product entity) throws Exception {
         try{
-            entity = clientRepository.save(entity);
+            entity = productRepository.save(entity);
             return entity;
 
         }catch (Exception e){
@@ -52,12 +51,12 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client update(Long id, Client entity) throws Exception {
+    public Product update(Long id, Product entity) throws Exception {
         try{
-            Optional<Client> entityOptional = clientRepository.findById(id);
-            Client client = entityOptional.get();
-            client = clientRepository.save(client);
-            return client;
+            Optional<Product> entityOptional = productRepository.findById(id);
+            Product product = entityOptional.get();
+            product = productRepository.save(product);
+            return product;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
@@ -67,8 +66,8 @@ public class ClientService implements BaseService<Client> {
     @Transactional
     public boolean delete(Long id) throws Exception {
         try{
-            if(clientRepository.existsById(id)){
-                clientRepository.deleteById(id);
+            if(productRepository.existsById(id)){
+                productRepository.deleteById(id);
                 return true;
             }else{
                 throw new Exception();

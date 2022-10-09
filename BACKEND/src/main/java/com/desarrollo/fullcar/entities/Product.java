@@ -46,7 +46,8 @@ public class Product implements Serializable{
         private int modelo;
         @Column(name="precio")
         private float precio;
-
+        @Column(name="cantidad")
+        private Long cantidad;
         //Metodos y relaciones.
         @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "fk_categoria", nullable = false)
