@@ -1,22 +1,22 @@
 package com.desarrollo.fullcar.controllers;
 
-import com.desarrollo.fullcar.entities.Client;
 import com.desarrollo.fullcar.entities.Product;
 import com.desarrollo.fullcar.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/producto")
+@RequestMapping(path ="/api/v1/product")
 public class ProductController {
     @Autowired
     private ProductService productoService;
+
 
     @GetMapping("")
     public ResponseEntity<List<Product>> getAll() throws Exception {
@@ -32,6 +32,18 @@ public class ProductController {
 
         }
 
+    }
+    @GetMapping(value = "/busqueda")
+    public String busquedaProduct(Model model, @RequestParam(value ="query",required = false)String q){
+        try {
+            List<Product> productos = this.productoService.findByTitle(q);
+            model.addAttribute("product", productos);
+            model.addAttribute("resultado",q);
+            return "views/busqueda";
+        } catch (Exception e) {
+            model.addAttribute("error", e.getMessage());
+            return "error";
+        }
     }
 
     @PostMapping("")

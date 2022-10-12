@@ -1,9 +1,7 @@
 package com.desarrollo.fullcar.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.desarrollo.fullcar.repositories.ClientRepository;
+import com.desarrollo.fullcar.entities.Authority;
+import com.desarrollo.fullcar.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,21 +11,21 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.desarrollo.fullcar.entities.Authority;
-import com.desarrollo.fullcar.repositories.ClientRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    ClientRepository clientRepository;
+    UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         //Buscar el usuario con el repositorio y si no existe lanzar una exepcion
-        com.desarrollo.fullcar.entities.Client  appUser =
-                clientRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
+        com.desarrollo.fullcar.entities.User appUser =
+                userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
 
         //Mapear nuestra lista de Authority con la de spring security
         List grantList = new ArrayList();
