@@ -10,7 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class Carrito implements Serializable {
     private Double total;
 
     @ManyToOne
-    private Client cliente;
+    private User user;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carrito")
     private List<DetalleCompra> listaDetalleCompra;

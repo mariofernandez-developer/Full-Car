@@ -1,6 +1,6 @@
 package com.desarrollo.fullcar.services;
 
-import com.desarrollo.fullcar.entities.Client;
+import com.desarrollo.fullcar.entities.Categoria;
 import com.desarrollo.fullcar.entities.Product;
 import com.desarrollo.fullcar.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +36,7 @@ public class ProductService implements BaseService<Product> {
             throw new Exception(e.getMessage());
         }
     }
+
 
     @Override
     @Transactional
@@ -73,6 +74,15 @@ public class ProductService implements BaseService<Product> {
                 throw new Exception();
             }
         }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+    @Transactional
+    public List<Product> findByTitle(String q) throws Exception{
+        try{
+            List<Product> entities = this.productRepository.findByTitle(q);
+            return entities;
+        } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }

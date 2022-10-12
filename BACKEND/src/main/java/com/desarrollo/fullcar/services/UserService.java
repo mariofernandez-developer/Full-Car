@@ -1,7 +1,7 @@
 package com.desarrollo.fullcar.services;
 
-import com.desarrollo.fullcar.entities.Client;
-import com.desarrollo.fullcar.repositories.ClientRepository;
+import com.desarrollo.fullcar.entities.User;
+import com.desarrollo.fullcar.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClientService implements BaseService<Client> {
+public class UserService implements BaseService<User> {
 
     @Autowired
-    private ClientRepository clientRepository;
+    private UserRepository userRepository;
 
     @Override
     @Transactional  //hace una transaccion a la base de datos
-    public List<Client> findAll() throws Exception {
+    public List<User> findAll() throws Exception {
         try{
-            List<Client> entidades = (List<Client>) clientRepository.findAll();
+            List<User> entidades = (List<User>) userRepository.findAll();
             return entidades;
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -28,9 +28,9 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client findById(Long id) throws Exception {
+    public User findById(Long id) throws Exception {
         try{
-            Optional<Client> entityOptional = clientRepository.findById(id); //como no sabemos si va a haber un registro en la base de datos lo colocamos asi
+            Optional<User> entityOptional = userRepository.findById(id); //como no sabemos si va a haber un registro en la base de datos lo colocamos asi
             return entityOptional.get();
 
         }catch (Exception e){
@@ -40,9 +40,9 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client save(Client entity) throws Exception {
+    public User save(User entity) throws Exception {
         try{
-            entity = clientRepository.save(entity);
+            entity = userRepository.save(entity);
             return entity;
 
         }catch (Exception e){
@@ -52,12 +52,12 @@ public class ClientService implements BaseService<Client> {
 
     @Override
     @Transactional
-    public Client update(Long id, Client entity) throws Exception {
+    public User update(Long id, User entity) throws Exception {
         try{
-            Optional<Client> entityOptional = clientRepository.findById(id);
-            Client client = entityOptional.get();
-            client = clientRepository.save(client);
-            return client;
+            Optional<User> entityOptional = userRepository.findById(id);
+            User user = entityOptional.get();
+            user = userRepository.save(user);
+            return user;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
@@ -67,8 +67,8 @@ public class ClientService implements BaseService<Client> {
     @Transactional
     public boolean delete(Long id) throws Exception {
         try{
-            if(clientRepository.existsById(id)){
-                clientRepository.deleteById(id);
+            if(userRepository.existsById(id)){
+                userRepository.deleteById(id);
                 return true;
             }else{
                 throw new Exception();
